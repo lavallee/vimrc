@@ -1,6 +1,7 @@
 " disable vi compatibility
 set nocompatible
 
+
 " enable pathogen plugin before we do anything else
 call pathogen#infect()
 
@@ -13,18 +14,18 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " configure status line
-set ruler laststatus=2 
+set ruler laststatus=2 number
 
 " search configuration
-set hlsearch incsearch ignorecase smartcase 
+set hlsearch incsearch ignorecase smartcase magic
 
 " indentation options
 set autoindent smartindent
 
-" tab depth and expansion options
-set expandtab tabstop=8 shiftwidth=4 softtabstop=4
+" tab depth and expansion option defaults
+set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-"set textwidth=78
+" set textwidth=78
 
 set autoread autowrite nobackup ttyfast viminfo='20,\"500
 set backspace=indent,eol,start notimeout clipboard=
@@ -32,12 +33,18 @@ set backspace=indent,eol,start notimeout clipboard=
 " allow reading of .vimrc in current working directory
 set exrc
 
+" navigation - keep 5 lines above or below cursor on screen
+set scrolloff=5
+
 " show matching bracket if it's on the screen
 set showmatch
 
 " file completion 
 set wildmenu
 set wildmode=list:longest
+
+" don't kill buffers
+set hidden
 
 syntax enable
 syntax on
@@ -56,6 +63,16 @@ set autoread
 
 " Use ack for grepping
 set grepprg=ack
+
+" Code folding
+set foldenable
+set foldmethod=marker
+set foldlevel=100
+set foldopen=block,hor,mark,percent,quickfix,tag
+function! SimpleFoldText() " {
+    return getline(v:foldstart).' '
+endfunction " }
+set foldtext=SimpleFoldText()
 
 " When vimrc is edited, reload it
 " if you install this somewhere other than ~/.vim, you'll need to change the
