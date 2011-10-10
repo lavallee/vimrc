@@ -1,7 +1,6 @@
 " disable vi compatibility
 set nocompatible
 
-
 " enable pathogen plugin before we do anything else
 call pathogen#infect()
 
@@ -14,7 +13,11 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " configure status line
-set ruler laststatus=2 number
+set ruler laststatus=2 
+
+" configure line numbers
+set number
+:highlight LineNr term=bold cterm=bold ctermfg=LightGrey ctermbg=DarkGrey gui=NONE guifg=DarkGrey guibg=NONE
 
 " search configuration
 set hlsearch incsearch ignorecase smartcase magic
@@ -49,6 +52,10 @@ set hidden
 syntax enable
 syntax on
 syntax sync fromstart
+
+" color scheme
+set background=dark
+colorscheme solarized
 
 " clear highlighted searches
 noremap <C-l> :nohls<CR><C-l>
