@@ -1,0 +1,9 @@
+Installation:
+
+* git clone into ~/.vim
+* ln -s ~/.vim/vimrc ~/.vimrc
+
+Inspiration:
+
+* https://github.com/imajes/vimfiles
+* https://github.com/socialtext/stconfig
