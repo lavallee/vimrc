@@ -18,6 +18,7 @@ set ruler laststatus=2
 " configure line numbers
 set number
 :highlight LineNr term=bold cterm=bold ctermfg=LightGrey ctermbg=DarkGrey gui=NONE guifg=DarkGrey guibg=NONE
+set cursorline
 
 " search configuration
 set hlsearch incsearch ignorecase smartcase magic
